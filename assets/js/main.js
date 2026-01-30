@@ -87,21 +87,35 @@ const ProjectData = {
     client: 'White Swan LLC',
     duration: 'Jan 2024 – Mar 2024',
     brief: 'Refurbishment of lobby and common areas with modern finishes and HVAC upgrades.',
-    imagesFolder: 'project-1'
+    imagesFolder: 'Project-1'
   },
   'project-2': {
     title: 'Yeamne Villa',
     client: 'Private Client',
     duration: 'Apr 2024 – Jul 2024',
     brief: 'Full villa makeover including duct cleaning, HVAC maintenance, and interior redesign.',
-    imagesFolder: 'project-2'
+    imagesFolder: 'Project-2'
   },
   'project-3': {
     title: 'Cloud Space',
     client: 'Cloud Space Co.',
     duration: 'Aug 2024 – Oct 2024',
     brief: 'Open-plan office renovation with structural alterations and new MEP layout.',
-    imagesFolder: 'project-3' // expects images under assets/images/projects/project-3/1.jpeg, 2.jpeg, ...
+    imagesFolder: 'Project-3'
+  },
+  'project-9': {
+    title: 'Project 9',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Design and renovation project.',
+    imagesFolder: 'Project-9'
+  },
+  'project-11': {
+    title: 'Project 11',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Design and renovation project.',
+    imagesFolder: 'Project-11'
   }
 };
 
@@ -216,7 +230,7 @@ async function tryFile(urlBase, number) {
 }
 
 async function autoDiscoverImagesByPrefix(prefix, limit = 80) {
-  const base = 'assets/images/projects/';
+  const base = 'assets/images/Projects/';
   const found = [];
   for (let n = 1; n <= limit; n++) {
     const hit = await tryFile(`${base}${prefix}`, n);
@@ -226,7 +240,7 @@ async function autoDiscoverImagesByPrefix(prefix, limit = 80) {
 }
 
 async function autoDiscoverImagesInFolder(folder, limit = 80) {
-  const base = `assets/images/projects/${folder}/`;
+  const base = `assets/images/Projects/${folder}/`;
   const found = [];
   for (let n = 1; n <= limit; n++) {
     const hit = await tryFile(base, n);
@@ -335,9 +349,41 @@ async function renderGalleryThumbnails() {
   }
 }
 
+// Live Google rating: fetch from serverless function and update footer block
+async function loadGoogleRating() {
+  const block = document.querySelector('.google-rating-block[data-google-rating-api]');
+  if (!block) return;
+  const apiUrl = block.getAttribute('data-google-rating-api') || '/.netlify/functions/get-google-rating';
+  const valueEl = document.getElementById('js-google-rating-value');
+  const countEl = document.getElementById('js-google-rating-count');
+  const starsEl = document.getElementById('js-google-rating-stars');
+  if (!valueEl || !countEl) return;
+
+  try {
+    const res = await fetch(apiUrl);
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data.rating != null) {
+      valueEl.textContent = Number(data.rating).toFixed(1);
+      if (starsEl) {
+        const r = Math.min(5, Math.max(0, Number(data.rating)));
+        const full = Math.round(r);
+        starsEl.textContent = '\u2605'.repeat(full) + '\u2606'.repeat(5 - full);
+      }
+    }
+    if (data.user_ratings_total != null) {
+      countEl.textContent = String(Math.max(0, Math.floor(Number(data.user_ratings_total))));
+    }
+  } catch (_) {
+    valueEl.textContent = '—';
+    countEl.textContent = '—';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderProjectDetail();
   renderGalleryThumbnails();
+  loadGoogleRating();
 });
 
 

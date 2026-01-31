@@ -103,19 +103,103 @@ const ProjectData = {
     brief: 'Open-plan office renovation with structural alterations and new MEP layout.',
     imagesFolder: 'Project-3'
   },
+  'project-4': {
+    title: 'MOE Pillar Painting',
+    client: 'Ministry of Education',
+    duration: '2024',
+    brief: 'Pillar painting project for Ministry of Education.',
+    imagesFolder: 'Project-4'
+  },
+  'project-5': {
+    title: 'Parking High level Painting',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'High level painting work for parking area.',
+    imagesFolder: 'Project-5'
+  },
+  'project-6': {
+    title: 'Washroom Refurbishment',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Complete washroom refurbishment project.',
+    imagesFolder: 'Project-6'
+  },
+  'project-7': {
+    title: 'Maintenance work Villa 7',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Maintenance and repair work for Villa 7.',
+    imagesFolder: 'Project-7'
+  },
+  'project-8': {
+    title: 'Flat Renovation',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Complete flat renovation project.',
+    imagesFolder: 'Project-8'
+  },
   'project-9': {
-    title: 'Project 9',
+    title: 'Madam Farm Renovation',
     client: 'Private Client',
     duration: '2024',
     brief: 'Design and renovation project.',
     imagesFolder: 'Project-9'
   },
-  'project-11': {
-    title: 'Project 11',
+  'project-10': {
+    title: 'Foundation work for plants',
     client: 'Private Client',
     duration: '2024',
-    brief: 'Design and renovation project.',
+    brief: 'Foundation work for plant installation.',
+    imagesFolder: 'Project-10'
+  },
+  'project-11': {
+    title: 'Dubai Municipality Ducting',
+    client: 'Dubai Municipality',
+    duration: '2024',
+    brief: 'Ducting installation project for Dubai Municipality.',
     imagesFolder: 'Project-11'
+  },
+  'project-12': {
+    title: 'Staircase Renovation',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Staircase renovation and refurbishment.',
+    imagesFolder: 'Project-12'
+  },
+  'project-13': {
+    title: 'Villa Shutter work for Parking',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Shutter installation work for villa parking area.',
+    imagesFolder: 'Project-13'
+  },
+  'project-14': {
+    title: 'Rooftop Sign Board',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Rooftop sign board installation project.',
+    imagesFolder: 'Project-14'
+  },
+  'project-15': {
+    title: 'Gym Restroom and Shower Renovation',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Gym restroom and shower area renovation.',
+    imagesFolder: 'Project-15'
+  },
+  'project-16': {
+    title: 'Corridor Renovation',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Corridor renovation and refurbishment project.',
+    imagesFolder: 'Project-16'
+  },
+  'project-17': {
+    title: 'Corridor Gypsum Ceiling works',
+    client: 'Private Client',
+    duration: '2024',
+    brief: 'Gypsum ceiling installation for corridors.',
+    imagesFolder: 'Project-17'
   }
 };
 
@@ -329,23 +413,32 @@ async function renderProjectDetail() {
 async function renderGalleryThumbnails() {
   const cards = document.querySelectorAll('[data-project-id]');
   if (!cards.length) return;
+  
+  // Process all cards
   for (const card of cards) {
     const projectId = card.getAttribute('data-project-id');
     const imgEl = card.querySelector('img.card-img');
     if (!imgEl) continue;
+    
     const data = ProjectData[projectId] || {};
 
     let images = data.images;
-    if (!images || !images.length || data.imagesFolder || data.autoPrefix) {
-      // eslint-disable-next-line no-await-in-loop
+    if (!images || !images.length) {
+      // Try to discover images
       images = await resolveProjectImages(projectId, data);
     }
 
-    const src = (data.cover) || (images && images[0]) || PROJECT_FALLBACK_IMAGE;
+    const src = (data.cover) || (images && images.length > 0 ? images[0] : null) || PROJECT_FALLBACK_IMAGE;
+    
+    // Set image source immediately
     imgEl.src = src;
     imgEl.alt = data.title || projectId;
     imgEl.loading = 'lazy';
-    imgEl.onerror = () => { imgEl.onerror = null; imgEl.src = PROJECT_FALLBACK_IMAGE; };
+    
+    imgEl.onerror = () => {
+      imgEl.onerror = null;
+      imgEl.src = PROJECT_FALLBACK_IMAGE;
+    };
   }
 }
 
@@ -380,10 +473,63 @@ async function loadGoogleRating() {
   }
 }
 
+// Gallery search and filter functionality
+function initGalleryFilters() {
+  const searchInput = document.getElementById('gallery-search');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  if (!searchInput || !filterButtons.length || !galleryItems.length) return;
+
+  let activeFilter = 'all';
+
+  // Filter button click handler
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      activeFilter = btn.getAttribute('data-filter');
+      filterGallery();
+    });
+  });
+
+  // Search input handler
+  searchInput.addEventListener('input', (e) => {
+    filterGallery(e.target.value.toLowerCase().trim());
+  });
+
+  function filterGallery(searchTerm = '') {
+    galleryItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+      const title = item.querySelector('h3')?.textContent.toLowerCase() || '';
+      
+      const matchesFilter = activeFilter === 'all' || category === activeFilter;
+      const matchesSearch = !searchTerm || title.includes(searchTerm);
+      
+      if (matchesFilter && matchesSearch) {
+        item.classList.remove('hidden');
+        // Trigger animation
+        setTimeout(() => {
+          item.style.opacity = '0';
+          item.style.animation = 'none';
+          setTimeout(() => {
+            item.style.animation = 'fadeIn 0.6s ease-out forwards';
+          }, 10);
+        }, 0);
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderProjectDetail();
   renderGalleryThumbnails();
   loadGoogleRating();
+  initGalleryFilters();
 });
 
 

@@ -31,26 +31,178 @@
     </header>
 
     <main class="container" style="padding:28px 0 44px;">
-      <h1>Gallery</h1>
-      <p class="muted">Showcase your completed projects here. Replace placeholders with your images.</p>
-      <div class="cards" style="margin-top:14px; grid-template-columns: repeat(3, 1fr);">
-        <a class="card" href="project.html?id=project-1" data-project-id="project-1"><img class="card-img" alt="Project 1" src="" style="background:#22232e;"><h3>Project 1 - White Swan Refurbishment</h3></a>
-        <a class="card" href="project.html?id=project-2" data-project-id="project-2"><img class="card-img" alt="Project 2" src="" style="background:#22232e;"><h3>Project 2 - Yeamne Villa</h3></a>
-        <a class="card" href="project.html?id=project-3" data-project-id="project-3"><img class="card-img" alt="Project 3" src="" style="background:#22232e;"><h3>Project 3 - Cloud Space</h3></a>
-        <a class="card" href="project.html?id=project-4" data-project-id="project-4"><img class="card-img" alt="Project 4" src="" style="background:#22232e;"><h3>Project 4 - MOE Pillar Painting</h3></a>
-        <a class="card" href="project.html?id=project-5" data-project-id="project-5"><img class="card-img" alt="Project 5" src="" style="background:#22232e;"><h3>Project 5 - Parking High level Painting</h3></a>
-        <a class="card" href="project.html?id=project-6" data-project-id="project-6"><img class="card-img" alt="Project 6" src="" style="background:#22232e;"><h3>Project 6 - Washroom Refurbishmnet</h3></a>
-        <a class="card" href="project.html?id=project-7" data-project-id="project-7"><img class="card-img" alt="Project 7" src="" style="background:#22232e;"><h3>Project 7 - Mainenance work Villa 7</h3></a>
-        <a class="card" href="project.html?id=project-8" data-project-id="project-8"><img class="card-img" alt="Project 8" src="" style="background:#22232e;"><h3>Project 8 - Flat Renovation</h3></a>
-        <a class="card" href="project.html?id=project-9" data-project-id="project-9"><img class="card-img" alt="Project 9" src="" style="background:#22232e;"><h3>Project 9 - Madam Farm Renovation</h3></a>
-        <a class="card" href="project.html?id=project-10" data-project-id="project-10"><img class="card-img" alt="Project 10" src="" style="background:#22232e;"><h3>Project 10 - Foundation work for plants</h3></a>
-        <a class="card" href="project.html?id=project-11" data-project-id="project-11"><img class="card-img" alt="Project 11" src="" style="background:#22232e;"><h3>Project 11 - Dubai Municipality Ducting</h3></a>
-        <a class="card" href="project.html?id=project-12" data-project-id="project-12"><img class="card-img" alt="Project 12" src="" style="background:#22232e;"><h3>Project 12 - Staircase Renovation</h3></a>
-        <a class="card" href="project.html?id=project-13" data-project-id="project-13"><img class="card-img" alt="Project 13" src="" style="background:#22232e;"><h3>Project 13 - Villa Shutter work for Parking</h3></a>
-        <a class="card" href="project.html?id=project-14" data-project-id="project-14"><img class="card-img" alt="Project 14" src="" style="background:#22232e;"><h3>Project 14 - Rooftop Sign Board</h3></a>
-        <a class="card" href="project.html?id=project-15" data-project-id="project-15"><img class="card-img" alt="Project 15" src="" style="background:#22232e;"><h3>Project 15 - Gym Restroom and Shower Renovation</h3></a>
-        <a class="card" href="project.html?id=project-16" data-project-id="project-16"><img class="card-img" alt="Project 16" src="" style="background:#22232e;"><h3>Project 16 - Corridor Renovation</h3></a>
-        <a class="card" href="project.html?id=project-17" data-project-id="project-17"><img class="card-img" alt="Project 17" src="" style="background:#22232e;"><h3>Project 17 - Corridor Gypsum Ceiling works</h3></a>
+      <h1 style="margin-bottom: 24px;">Project Gallery</h1>
+      
+      <!-- Search Bar -->
+      <div class="gallery-search-wrapper" style="margin-bottom: 24px;">
+        <input type="text" id="gallery-search" class="gallery-search" placeholder="Search for: Search" aria-label="Search projects">
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="gallery-filters" style="margin-bottom: 32px;">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="retail">Retail</button>
+        <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+        <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="gallery-grid" id="gallery-grid">
+        <a class="gallery-item" href="project.html?id=project-1" data-project-id="project-1" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 1" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>White Swan Refurbishment</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-2" data-project-id="project-2" data-category="residential">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 2" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Yeamne Villa</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-3" data-project-id="project-3" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 3" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Cloud Space</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-4" data-project-id="project-4" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 4" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>MOE Pillar Painting</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-5" data-project-id="project-5" data-category="maintenance">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 5" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Parking High level Painting</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-6" data-project-id="project-6" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 6" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Washroom Refurbishment</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-7" data-project-id="project-7" data-category="residential">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 7" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Maintenance work Villa 7</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-8" data-project-id="project-8" data-category="residential">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 8" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Flat Renovation</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-9" data-project-id="project-9" data-category="residential">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 9" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Madam Farm Renovation</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-10" data-project-id="project-10" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 10" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Foundation work for plants</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-11" data-project-id="project-11" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 11" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Dubai Municipality Ducting</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-12" data-project-id="project-12" data-category="residential">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 12" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Staircase Renovation</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-13" data-project-id="project-13" data-category="residential">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 13" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Villa Shutter work for Parking</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-14" data-project-id="project-14" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 14" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Rooftop Sign Board</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-15" data-project-id="project-15" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 15" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Gym Restroom and Shower Renovation</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-16" data-project-id="project-16" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 16" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Corridor Renovation</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
+        <a class="gallery-item" href="project.html?id=project-17" data-project-id="project-17" data-category="commercial">
+          <div class="gallery-item-image">
+            <img class="card-img" alt="Project 17" src="" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h3>Corridor Gypsum Ceiling works</h3>
+              <span class="gallery-view-details">View Details</span>
+            </div>
+          </div>
+        </a>
       </div>
     </main>
 

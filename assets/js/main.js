@@ -313,24 +313,36 @@ async function tryFile(urlBase, number) {
   return null;
 }
 
+const DISCOVER_BATCH = 20;
+
 async function autoDiscoverImagesByPrefix(prefix, limit = 80) {
   const base = 'assets/images/Projects/';
   const found = [];
-  for (let n = 1; n <= limit; n++) {
-    const hit = await tryFile(`${base}${prefix}`, n);
-    if (hit) found.push(hit);
+  for (let start = 1; start <= limit; start += DISCOVER_BATCH) {
+    const batch = [];
+    for (let n = start; n < start + DISCOVER_BATCH && n <= limit; n++) {
+      batch.push(tryFile(`${base}${prefix}`, n).then(function (url) { return url ? { n: n, url: url } : null; }));
+    }
+    const results = await Promise.all(batch);
+    results.forEach(function (r) { if (r) found.push(r); });
   }
-  return found;
+  found.sort(function (a, b) { return a.n - b.n; });
+  return found.map(function (f) { return f.url; });
 }
 
 async function autoDiscoverImagesInFolder(folder, limit = 80) {
   const base = `assets/images/Projects/${folder}/`;
   const found = [];
-  for (let n = 1; n <= limit; n++) {
-    const hit = await tryFile(base, n);
-    if (hit) found.push(hit);
+  for (let start = 1; start <= limit; start += DISCOVER_BATCH) {
+    const batch = [];
+    for (let n = start; n < start + DISCOVER_BATCH && n <= limit; n++) {
+      batch.push(tryFile(base, n).then(function (url) { return url ? { n: n, url: url } : null; }));
+    }
+    const results = await Promise.all(batch);
+    results.forEach(function (r) { if (r) found.push(r); });
   }
-  return found;
+  found.sort(function (a, b) { return a.n - b.n; });
+  return found.map(function (f) { return f.url; });
 }
 
 async function resolveProjectImages(projectId, data) {
@@ -439,13 +451,18 @@ async function renderGalleryThumbnails() {
 
   results.forEach(({ imgEl, projectId, data, src }) => {
     if (!imgEl) return;
-    imgEl.src = src;
-    imgEl.alt = data.title || projectId;
-    imgEl.loading = 'lazy';
+    function showWhenLoaded() {
+      imgEl.classList.add('gallery-img-loaded');
+    }
+    imgEl.onload = showWhenLoaded;
     imgEl.onerror = function () {
       this.onerror = null;
       this.src = PROJECT_FALLBACK_IMAGE;
     };
+    imgEl.alt = data.title || projectId;
+    imgEl.loading = 'lazy';
+    imgEl.src = src;
+    if (imgEl.complete) showWhenLoaded();
   });
 }
 

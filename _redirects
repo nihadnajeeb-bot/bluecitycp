@@ -1,0 +1,2 @@
+# Serve logo as favicon when crawlers request /favicon.ico
+/favicon.ico  /assets/images/logo.png  200

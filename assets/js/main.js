@@ -349,6 +349,20 @@ async function resolveProjectImages(projectId, data) {
   return list;
 }
 
+// Fast path: only try first image (for gallery thumbnails). At most a few requests per project.
+async function getFirstProjectImage(projectId, data) {
+  if (data.images && data.images[0]) return data.images[0];
+  const folder = data.imagesFolder || projectId;
+  if (folder) {
+    const base = `assets/images/Projects/${folder}/`;
+    const url = await tryFile(base, 1);
+    if (url) return url;
+  }
+  const base = `assets/images/Projects/${projectId}/`;
+  const url = await tryFile(base, 1);
+  return url || null;
+}
+
 async function renderProjectDetail() {
   const container = document.getElementById('project-detail');
   if (!container) return; // Not on project page
@@ -413,33 +427,26 @@ async function renderProjectDetail() {
 async function renderGalleryThumbnails() {
   const cards = document.querySelectorAll('[data-project-id]');
   if (!cards.length) return;
-  
-  // Process all cards
-  for (const card of cards) {
+
+  // Resolve first image for all projects in parallel (fast: only 1 image per project)
+  const results = await Promise.all(Array.from(cards).map(async (card) => {
     const projectId = card.getAttribute('data-project-id');
     const imgEl = card.querySelector('img.card-img');
-    if (!imgEl) continue;
-    
     const data = ProjectData[projectId] || {};
+    const src = (data.cover) || (await getFirstProjectImage(projectId, data)) || PROJECT_FALLBACK_IMAGE;
+    return { imgEl, projectId, data, src };
+  }));
 
-    let images = data.images;
-    if (!images || !images.length) {
-      // Try to discover images
-      images = await resolveProjectImages(projectId, data);
-    }
-
-    const src = (data.cover) || (images && images.length > 0 ? images[0] : null) || PROJECT_FALLBACK_IMAGE;
-    
-    // Set image source immediately
+  results.forEach(({ imgEl, projectId, data, src }) => {
+    if (!imgEl) return;
     imgEl.src = src;
     imgEl.alt = data.title || projectId;
     imgEl.loading = 'lazy';
-    
-    imgEl.onerror = () => {
-      imgEl.onerror = null;
-      imgEl.src = PROJECT_FALLBACK_IMAGE;
+    imgEl.onerror = function () {
+      this.onerror = null;
+      this.src = PROJECT_FALLBACK_IMAGE;
     };
-  }
+  });
 }
 
 // Live Google rating: fetch from serverless function and update footer block

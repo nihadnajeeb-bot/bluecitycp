@@ -365,10 +365,15 @@ Key Highlights:
   }
 };
 
-// Sticky header: add blue banner and button styles after scrolling past hero
+// Sticky header: add blue banner and button styles after scrolling past hero (homepage only); other pages stay blue always
 function initHeaderScrollState() {
   const header = document.querySelector('.site-header');
   if (!header) return;
+  const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '';
+  if (!isHomePage) {
+    header.classList.add('site-header--scrolled');
+    return;
+  }
   function updateHeader() {
     const offset = window.scrollY || window.pageYOffset || 0;
     if (offset > 40) {

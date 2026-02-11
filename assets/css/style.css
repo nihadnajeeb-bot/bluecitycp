@@ -28,6 +28,9 @@ body {
 
 .container { width: min(1100px, 92%); margin: 0 auto; }
 
+/* Inner pages: push main content below fixed header so titles aren't covered (margin so inline padding on main isn't overridden) */
+body.page-inner main { margin-top: 100px; }
+
 /* Header */
 .site-header { 
   position: fixed; 

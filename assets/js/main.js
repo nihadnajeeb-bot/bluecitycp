@@ -83,45 +83,180 @@ const PROJECT_FALLBACK_IMAGE = 'assets/images/logo.png';
 const ProjectData = {
   // Example entries. Replace or extend with real project data and images.
   'project-1': {
-    title: 'White Swan Refurbishment',
-    client: 'White Swan LLC',
+    title: 'White Swan Building Renovation - 5 Floors',
+    client: 'Saeed Suhail Saeed',
     duration: 'Jan 2024 – Mar 2024',
-    brief: 'Refurbishment of lobby and common areas with modern finishes and HVAC upgrades.',
+    brief: `The refurbishment of the White Swan Building, which was nearly three decades old was aimed at enhancing the functionality, aesthetics, and overall ambiance of the building. These works included extensive civil modifications, meticulous finishing, and a fresh coat of paint to create a modern and inviting environment for occupants. The work posed numerous challenges, including, the careful demolition of existing finishes without compromising the building's structural integrity. Despite the hectic nature of the task, we completed it with ease and zero accidents.
+
+Key Highlights:
+• Demolition and waste removal: Precisely removed the finishes, false ceiling etc. preserving the integrity of the building and disposed it in the municipality yard.
+• Flooring Installation: Laid high-quality flooring materials such as tiles, marble, etc. to enhance durability and visual appeal.
+• Plumbing and Electrical Upgrades: Upgraded plumbing and electrical systems to ensure safety, efficiency, and compliance with modern standards. Installation of Fixtures and Fittings: Incorporated contemporary fixtures and fittings in restrooms, kitchens, and other utility areas for improved functionality and aesthetics.
+• Commissioning of the services including Plumbing and Electricity.
+
+Specifics of works done:
+• Project duration: 189 Days.
+• Project Description: 5 Floors / 40 Apts Total
+• Manhours: 44,640 Labour-hours.
+• Total Cost: AED 3,133,400.00`,
     imagesFolder: 'Project-1'
   },
   'project-2': {
     title: 'Yeamne Villa',
-    client: 'Private Client',
+    client: 'Private Villa',
     duration: 'Apr 2024 – Jul 2024',
-    brief: 'Full villa makeover including duct cleaning, HVAC maintenance, and interior redesign.',
+    brief: `Our team successfully completed the installation of high-quality PVC cladding on the exterior of the villa. This upgrade not only enhances the villa's visual appeal but also provides added protection against harsh weather conditions, ensuring durability and low maintenance. The installation was carried out with precision, meeting the client's expectations for both aesthetics and functionality.
+
+Challenges and Solutions:
+• The villa's exterior had some uneven areas, making it difficult to achieve a smooth and uniform cladding installation. Our team carefully leveled the surface using appropriate backing materials and adjusted the cladding panels to ensure a seamless finish.
+• Unexpected weather fluctuations, such as strong winds or high temperatures, posed difficulties in handling and securing the cladding panels. Work schedules were adjusted to optimize installation during favorable weather. Hard-to-reach areas required seamless integration with existing infrastructure and services.
+• Ensuring accurate alignment of the cladding panels, especially around corners and edges, required meticulous attention to detail. Our team used laser-leveling tools and precise measurement techniques to maintain alignment and achieve a professional finish.
+• Properly securing the PVC cladding to withstand external elements such as wind and moisture was crucial for long-term durability. High-quality fasteners and sealants were used to reinforce the installation, ensuring a strong bond and enhanced resistance to weathering.
+
+Key Moments:
+To complete the PVC cladding installation within a limited time frame, we focused on detailed planning, efficient team coordination, and strategic resource allocation. By organizing tasks in parallel, optimizing work hours, and preparing materials in advance, we ensured smooth execution. We also adapted quickly to challenges, maintaining flexibility while sticking to the schedule. This approach allowed us to meet the deadline without compromising quality.`,
     imagesFolder: 'Project-2'
   },
   'project-3': {
-    title: 'Cloud Space',
-    client: 'Cloud Space Co.',
+    title: 'Smoke Duct – Dubai Mall',
+    client: 'Cloud Space',
     duration: 'Aug 2024 – Oct 2024',
-    brief: 'Open-plan office renovation with structural alterations and new MEP layout.',
+    brief: `We successfully designed and installed state-of-the-art smoke duct system at Dubai Mall, meeting the highest safety and engineering standards. This vital project was undertaken to significantly improve fire safety measures within the facility, ensuring the efficient extraction of smoke during emergencies. The installation was meticulously executed to comply with stringent local building codes and regulations, reflecting our commitment to quality, safety, and precision in every aspect of the project.
+
+Challenges and Solutions:
+• Complex Mall Layout and existing services: Mapped out the mall's intricate architecture and existing services to design an efficient smoke extraction pathway. Coordination: Collaborated closely with mall management and other contractors to minimize disruption during installation. Precision Work: Utilized advanced tools and techniques to install ducts in hard-to-reach areas, ensuring seamless integration with existing infrastructure and services.
+
+Outcome:
+• Area of ducts installed: 1900m²
+• Project duration: 52 Days
+• Man-hours: 3,744 Labour Hours
+• Improved fire safety measures, providing a safer environment for shoppers and staff
+• Successfully met project deadlines and quality benchmarks, garnering praise from mall management and safety inspectors
+
+Top Moments:
+Our workers meticulously altered the ducts to ensure precise adjustments for the final fittings. With careful planning and skilled execution, they modified the ductwork to achieve a perfect fit, ensuring optimal functionality and seamless integration. Their attention to detail and commitment to quality allowed the installation process to proceed smoothly, meeting all specifications and project requirements.`,
     imagesFolder: 'Project-3'
   },
   'project-4': {
-    title: 'MOE Pillar Painting',
-    client: 'Ministry of Education',
+    title: 'Painting Works - MOE Part – 2',
+    client: 'Mall of Emirates',
     duration: '2024',
-    brief: 'Pillar painting project for Ministry of Education.',
-    imagesFolder: 'Project-4'
+    brief: `Project Overview
+Our team successfully executed painting works at Mall of the Emirates during night hours (12:00 AM – 6:00 AM) to ensure zero disruption to mall operations. The scope included precision painting of internal pillars, carried out with strict protection and safety measures to maintain the mall's pristine environment.
+
+Scope of Work
+• Night-time interior painting of mall pillars
+• High-precision application with controlled techniques
+• Full protection of floors and surrounding areas
+
+Challenges & Solutions
+
+1. Limited Working Timeframe
+Challenge: Completing work within restricted night hours
+Solution: Implemented a well-structured execution plan; deployed skilled manpower with efficient task allocation; maintained high-quality standards without delays.
+
+2. Preventing Paint Damage
+Challenge: Risk of paint spills or splashes on mall flooring and interiors
+Solution: Used protective coverings and masking tapes; applied controlled spray and brush techniques; ensured continuous supervision for cleanliness and precision.
+
+3. Elevated Work at Pillars
+Challenge: Safe access to high-level pillar surfaces
+Solution: Utilized secure scaffolding and lift equipment; followed strict safety protocols for workers.
+
+Project Outcome
+• Total Area Painted: 1,900 m²
+• Project Duration: 8 Days
+• Manhours: 840 Labour Hours
+
+Results Achieved
+• Delivered a refreshed and visually appealing interior environment
+• Enhanced overall shopping experience
+• Successfully met project timelines and quality benchmarks
+• Received positive feedback from mall management and tenants
+
+Top Moments
+Following the successful completion of our first painting project at Mall of the Emirates, our team earned the trust and confidence of mall management, leading to the award of a second project.
+The management was particularly impressed by:
+• Exceptional workmanship quality
+• Meticulous protection of surrounding areas
+• Zero paint damage to existing interiors
+• Strict adherence to tight schedules
+This recognition reaffirmed our commitment to excellence and reinforced confidence in our ability to deliver complex projects under demanding conditions.`,
+    imagesFolder: 'Project-5'
   },
   'project-5': {
-    title: 'Parking High level Painting',
-    client: 'Private Client',
+    title: 'Painting Works – Mall of the Emirates (Part 1)',
+    client: 'Mall of the Emirates',
     duration: '2024',
-    brief: 'High level painting work for parking area.',
-    imagesFolder: 'Project-5'
+    brief: `Project Overview
+Our team successfully executed painting works at Mall of the Emirates during night hours (12:00 AM – 6:00 AM) to ensure zero disruption to mall operations. The scope included precision painting of internal pillars, carried out with strict protection and safety measures to maintain the mall's pristine environment.
+
+Scope of Work
+• Night-time interior painting of mall pillars
+• High-precision application with controlled techniques
+• Full protection of floors and surrounding areas
+
+Challenges & Solutions
+
+1. Limited Working Timeframe
+Challenge:
+• Completing work within restricted night hours
+Solution:
+• Implemented a well-structured execution plan
+• Deployed skilled manpower with efficient task allocation
+• Maintained high-quality standards without delays
+
+2. Preventing Paint Damage
+Challenge:
+• Risk of paint spills or splashes on mall flooring and interiors
+Solution:
+• Used protective coverings and masking tapes
+• Applied controlled spray and brush techniques
+• Ensured continuous supervision for cleanliness and precision
+
+3. Elevated Work at Pillars
+Challenge:
+• Safe access to high-level pillar surfaces
+Solution:
+• Utilized secure scaffolding and lift equipment
+• Followed strict safety protocols for workers
+
+Project Outcome
+• Total Area Painted: 1,900 m²
+• Project Duration: 8 Days
+• Manhours: 840 Labour Hours
+
+Results Achieved
+• Delivered a refreshed and visually appealing interior environment
+• Enhanced overall shopping experience
+• Successfully met project timelines and quality benchmarks
+• Received positive feedback from mall management and tenants
+
+Top Moments
+Following the successful completion of our first painting project at Mall of the Emirates, our team earned the trust and confidence of mall management, leading to the award of a second project.
+The management was particularly impressed by:
+• Exceptional workmanship quality
+• Meticulous protection of surrounding areas
+• Zero paint damage to existing interiors
+• Strict adherence to tight schedules
+This recognition reaffirmed our commitment to excellence and reinforced confidence in our ability to deliver complex projects under demanding conditions.`,
+    imagesFolder: 'Project-4'
   },
   'project-6': {
     title: 'Washroom Refurbishment',
-    client: 'Private Client',
-    duration: '2024',
-    brief: 'Complete washroom refurbishment project.',
+    client: 'Ventura',
+    duration: 'Jan 2025',
+    brief: `The Washroom Refurbishment project involved a complete upgrade of the existing washroom to improve functionality, hygiene, and visual appeal. The scope included reconfiguration of sanitary layouts, modification of plumbing and drainage systems, comprehensive waterproofing, and high-quality finishing works to deliver a durable and modern washroom space.
+
+The project required precise coordination between civil and MEP works, particularly during the relocation of essential services. All works were executed with minimal disruption and in compliance with applicable safety, quality, and waterproofing standards.
+
+Key Highlights:
+• Sanitary Reconfiguration: Relocated WC units and optimized the washroom layout for improved space utilization and user comfort.
+• Plumbing & Drainage Works: Shifted and modified essential pipelines and drainage lines to suit the new layout, ensuring proper flow and leak-free performance.
+• Waterproofing Works: Applied approved waterproofing systems to floors and wet areas, including proper treatment of joints and penetrations to prevent seepage.
+• Tiling Works: Installed high-quality wall and floor tiles with precise alignment and durable finishes.
+• Fixtures & Finishing: Installed sanitary fixtures and accessories to achieve a clean, functional, and modern appearance.
+• Testing & Commissioning: Conducted water ponding tests, pressure testing, and drainage checks to ensure long-term reliability.`,
     imagesFolder: 'Project-6'
   },
   'project-7': {
@@ -153,10 +288,19 @@ const ProjectData = {
     imagesFolder: 'Project-10'
   },
   'project-11': {
-    title: 'Dubai Municipality Ducting',
+    title: 'Dubai Municipality – Ducting Installation',
     client: 'Dubai Municipality',
-    duration: '2024',
-    brief: 'Ducting installation project for Dubai Municipality.',
+    duration: 'April 2025 - July 2025',
+    brief: `The Dubai Municipality Ducting Installation project involved the supply, fabrication, and installation of a complete HVAC ducting system to enhance indoor air distribution, ventilation efficiency, and overall environmental comfort within the facility. The scope focused on delivering a reliable, energy-efficient, and compliant air management system aligned with municipal standards and operational requirements.
+
+Given the operational nature of the facility, the works required careful planning, coordinated execution, and minimal disruption to ongoing activities. Our team ensured precise installation, adherence to safety regulations, and high-quality workmanship throughout the project lifecycle. The installation was completed on schedule with zero safety incidents and fully met performance expectations.
+
+Key Highlights:
+• Duct Fabrication & Installation: Fabricated and installed high-quality GI ducts with proper insulation to ensure efficient airflow and thermal performance.
+• Air Distribution Optimization: Designed and positioned ducts, diffusers, and grills for balanced airflow and improved ventilation efficiency.
+• Support & Mounting Systems: Installed robust supports and hangers to ensure structural stability and long-term durability.
+• Testing & Sealing: Conducted air leakage testing, sealing, and insulation checks to maintain system efficiency and reduce energy loss.
+• Commissioning: Performed final inspection, airflow balancing, and system commissioning to ensure compliance with Dubai Municipality standards.`,
     imagesFolder: 'Project-11'
   },
   'project-12': {
@@ -174,17 +318,35 @@ const ProjectData = {
     imagesFolder: 'Project-13'
   },
   'project-14': {
-    title: 'Rooftop Sign Board',
-    client: 'Private Client',
-    duration: '2024',
-    brief: 'Rooftop sign board installation project.',
+    title: 'Locker – Rooftop Signboard',
+    client: 'Brandfolio',
+    duration: 'Dec 2025',
+    brief: `The Locker Rooftop Signboard project involved the design, fabrication, and installation of a high-visibility rooftop signage system to enhance brand presence and create a strong visual identity for the client. The objective was to deliver a durable, aesthetically striking, and structurally secure installation that could withstand outdoor environmental conditions while ensuring maximum visibility from long distances.
+
+Working at height and within tight timelines presented logistical and safety challenges, requiring detailed planning, precise coordination, and strict adherence to safety protocols. Despite these complexities, the project was completed efficiently, maintaining high quality standards and achieving zero safety incidents.
+
+Key Highlights:
+• Structural Preparation: Conducted site inspection and reinforced mounting areas to ensure safe and stable rooftop installation.
+• Fabrication & Installation: Manufactured custom-built signboard components using weather-resistant materials and installed with precision for long-term durability.
+• Electrical & Lighting Works: Integrated energy-efficient LED lighting systems for enhanced night-time visibility and reduced power consumption.
+• Safety & Compliance: Executed all works with proper access systems, height safety measures, and compliance with local regulations.
+• Testing & Commissioning: Performed complete electrical testing and final alignment to ensure optimal illumination, visibility, and performance.`,
     imagesFolder: 'Project-14'
   },
   'project-15': {
-    title: 'Gym Restroom and Shower Renovation',
-    client: 'Private Client',
-    duration: '2024',
-    brief: 'Gym restroom and shower area renovation.',
+    title: 'Dubai Municipality – Ducting Installation',
+    client: 'Dubai Municipality',
+    duration: 'April 2025 - July 2025',
+    brief: `The Dubai Municipality Ducting Installation project involved the supply, fabrication, and installation of a complete HVAC ducting system to enhance indoor air distribution, ventilation efficiency, and overall environmental comfort within the facility. The scope focused on delivering a reliable, energy-efficient, and compliant air management system aligned with municipal standards and operational requirements.
+
+Given the operational nature of the facility, the works required careful planning, coordinated execution, and minimal disruption to ongoing activities. Our team ensured precise installation, adherence to safety regulations, and high-quality workmanship throughout the project lifecycle. The installation was completed on schedule with zero safety incidents and fully met performance expectations.
+
+Key Highlights:
+• Duct Fabrication & Installation: Fabricated and installed high-quality GI ducts with proper insulation to ensure efficient airflow and thermal performance.
+• Air Distribution Optimization: Designed and positioned ducts, diffusers, and grills for balanced airflow and improved ventilation efficiency.
+• Support & Mounting Systems: Installed robust supports and hangers to ensure structural stability and long-term durability.
+• Testing & Sealing: Conducted air leakage testing, sealing, and insulation checks to maintain system efficiency and reduce energy loss.
+• Commissioning: Performed final inspection, airflow balancing, and system commissioning to ensure compliance with Dubai Municipality standards.`,
     imagesFolder: 'Project-15'
   },
   'project-16': {
@@ -202,6 +364,22 @@ const ProjectData = {
     imagesFolder: 'Project-17'
   }
 };
+
+// Sticky header: add blue banner and button styles after scrolling past hero
+function initHeaderScrollState() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  function updateHeader() {
+    const offset = window.scrollY || window.pageYOffset || 0;
+    if (offset > 40) {
+      header.classList.add('site-header--scrolled');
+    } else {
+      header.classList.remove('site-header--scrolled');
+    }
+  }
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+}
 
 function getQueryParam(name) {
   const params = new URLSearchParams(window.location.search);
@@ -383,13 +561,15 @@ async function renderProjectDetail() {
   const data = id && ProjectData[id] || {};
 
   const titleEl = document.getElementById('project-title');
+  const clientEl = document.getElementById('project-client');
   const metaEl = document.getElementById('project-meta');
   const briefEl = document.getElementById('project-brief');
   const photosEl = document.getElementById('project-photos');
   const coverEl = document.getElementById('project-cover');
 
   if (titleEl) titleEl.textContent = data.title || '';
-  if (metaEl && (data.client || data.duration)) metaEl.textContent = `Client: ${data.client || '—'} • Timeframe: ${data.duration || '—'}`;
+  if (clientEl) clientEl.textContent = data.client ? `Client: ${data.client}` : '';
+  if (metaEl && data.duration) metaEl.textContent = `Timeframe: ${data.duration}`;
   if (briefEl && data.brief) briefEl.textContent = data.brief;
 
   // Resolve images
@@ -451,6 +631,16 @@ async function renderGalleryThumbnails() {
 
   results.forEach(({ imgEl, projectId, data, src }) => {
     if (!imgEl) return;
+    const card = imgEl.closest('.gallery-item');
+    if (card) {
+      const overlay = card.querySelector('.gallery-item-overlay');
+      if (overlay) {
+        const titleEl = overlay.querySelector('h3');
+        const clientEl = overlay.querySelector('.gallery-item-client');
+        if (titleEl && data.title) titleEl.textContent = data.title;
+        if (clientEl) clientEl.textContent = data.client ? `Client: ${data.client}` : '';
+      }
+    }
     function showWhenLoaded() {
       imgEl.classList.add('gallery-img-loaded');
     }
@@ -554,6 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderGalleryThumbnails();
   loadGoogleRating();
   initGalleryFilters();
+  initHeaderScrollState();
 });
 
 

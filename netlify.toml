@@ -1,0 +1,4 @@
+# Netlify config for Blue City Group static site
+[build]
+  publish = "."
+  functions = "netlify/functions"

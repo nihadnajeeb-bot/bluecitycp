@@ -1,2 +1,2 @@
-# Serve logo as favicon when crawlers request /favicon.ico
-/favicon.ico  /assets/images/logo.png  200
+# Serve BC logo as favicon when browser/crawlers request /favicon.ico (prevents default globe icon)
+/favicon.ico  /assets/images/logo-tab.png  200
